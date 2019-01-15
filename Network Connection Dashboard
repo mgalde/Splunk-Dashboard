@@ -34,7 +34,7 @@
   <row>
     <panel>
       <chart>
-        <title>NARI ACCOUNT SECURITY</title>
+        <title>ACCOUNT SECURITY</title>
         <search>
           <query>eventtype=winsec TaskCategory=Logon | timechart count by EventCode usenull=f useother=f</query>
           <earliest>-24h</earliest>
@@ -47,7 +47,7 @@
   </row>
   <row>
     <panel>
-      <title>NARI Outbound Connections</title>
+      <title>Outbound Connections</title>
       <viz type="sankey_diagram_app.sankey_diagram">
         <search>
           <query>AddressFamily=ipv4 Direction=outbound LocalAddress NOT "0.0.0.0" NOT "127.0.0.1"| stats count, by LocalAddress RemoteAddress | where count > 10</query>
@@ -70,7 +70,7 @@
   </row>
   <row>
     <panel>
-      <title>NARI Inbound Connections</title>
+      <title>Inbound Connections</title>
       <viz type="sankey_diagram_app.sankey_diagram">
         <search>
           <query>AddressFamily=ipv4 Direction=inbound LocalAddress NOT "239.255.255.250" NOT "224.0.0.252" NOT "255.255.255.255" NOT "137.48.179.255" NOT "127.0.0.1"| stats count, by LocalAddress RemoteAddress </query>
